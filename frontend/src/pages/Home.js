@@ -21,7 +21,7 @@ export default function Home() {
         <div className="home">
             <div className="workouts">
               {workouts && workouts.map((workout) => {
-                <p key={workout._id}>{workout.title}</p>
+                <p key={workout._id}> {workout.title} </p>
               })}  
             </div>
         </div>
