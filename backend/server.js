@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/api/workouts', workoutRoutes)
+app.use('http://localhost:4000/api/workouts', workoutRoutes)
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
