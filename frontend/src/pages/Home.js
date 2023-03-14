@@ -1,6 +1,7 @@
 import { useEffect, useState} from 'react'
 
 import WorkoutDetails from '../components/WorkoutDetails'
+import WorkoutForm from '../components/WorkoutForm'
 
 export default function Home() {
 
@@ -26,6 +27,7 @@ export default function Home() {
               return <WorkoutDetails key={workout._id} workout={workout} />
               })}  
             </div>
+            <WorkoutForm />
         </div>
     )
 }
