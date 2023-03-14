@@ -20,6 +20,17 @@ export default function WorkoutForm () {
             }
         })
         const json = await response.json()
+
+        if(!response.ok){
+            setError(json.error)
+        }
+        if(response.ok){
+            setTitle('')
+            setLoad('')
+            setReps('')
+            setError(null)
+            console.log('New Workout Added', json)
+        }
     }
 
     return(
