@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import WorkoutDetails from '../components/WorkoutDetails'
 import WorkoutForm from '../components/WorkoutForm'
-import { useWorkoutsContext } from '../hooks/seWorkoutsContext'
+import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
 export default function Home() {
    const {workouts, dispatch } = useWorkoutsContext()
