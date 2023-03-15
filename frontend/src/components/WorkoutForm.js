@@ -32,7 +32,7 @@ export default function WorkoutForm () {
             setReps('')
             setError(null)
             console.log('New Workout Added', json)
-            dispatch({type: 'CREATE_WORKOUT', payload: json})
+            dispatch({type: 'CREATE_WORKOUTS', payload: json})
         }
     }
 
