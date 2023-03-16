@@ -1,11 +1,12 @@
 import { useEffect } from 'react'
-
+import { useAuthContext } from '../hooks/useAuthContext'
 import WorkoutDetails from '../components/WorkoutDetails'
 import WorkoutForm from '../components/WorkoutForm'
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
 export default function Home() {
    const {workouts, dispatch } = useWorkoutsContext()
+   const {user} = useAuthContext()
     
 
     useEffect(() => {
@@ -17,9 +18,10 @@ export default function Home() {
                 dispatch({type: 'SET_WORKOUTS', payload: json})
             }
         }
-
-        fetchWorkouts()
-    }, [dispatch])
+        if (user) {
+            fetchWorkouts()
+        }
+    }, [dispatch, user])
 
     return (
         <div className="home">
