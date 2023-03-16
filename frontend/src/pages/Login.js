@@ -11,6 +11,9 @@ export default function Login () {
         e.preventDefault()
 
         await login(email, password)
+        setEmail('')
+        setPassword('')
+        
     }
 
     return (
