@@ -5,7 +5,7 @@ export default function Signup () {
     const [password, setPassword] = useState('')
 
     const handleSubmit = async(e) => {
-        e.preventDefault
+        e.preventDefault()
 
         console.log(email, password)
     }
