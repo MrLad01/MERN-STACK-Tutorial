@@ -15,7 +15,7 @@ export default function requireAuth( req, res, next ){
     try {
         const {_id} = jwt.verify(token, process.env.SECRET)
 
-        req.user =  User.findOne({ _id }).select('_id')
+        req.user = User.findOne({ _id }).select('_id')
 
      } catch(error) {
         console.log(error)
