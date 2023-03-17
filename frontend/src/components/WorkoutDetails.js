@@ -1,11 +1,17 @@
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 import formatDistanceToNow from "date-fns/formatDistanceToNow"
 
 export default function WorkoutDetails ({ workout }) {  
     const {dispatch} = useWorkoutsContext() 
-    
+    const { user } = useAuthContext()
     const handleClick = async () => {
+
+        if (!user) {
+            return
+        }
+
         const response = await fetch('/api/workouts/' + workout._id, {
             method: 'DELETE',
             headers: {
