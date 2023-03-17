@@ -11,7 +11,11 @@ export default function Home() {
 
     useEffect(() => {
         const fetchWorkouts = async () => {
-            const response = await fetch('http://localhost:4000/api/workouts')
+            const response = await fetch('http://localhost:4000/api/workouts', {
+                headers: {
+                    'Authorization': `Bearer ${user.token}`
+                }
+            })
             const json = await response.json()
 
             if(response.ok) {
